@@ -33,6 +33,14 @@ public class RegistratiActivity extends AppCompatActivity implements View.OnClic
         edtPassword = findViewById(R.id.edtRegistratiPassword);
         edtConfirmPassword = findViewById(R.id.edtRegistratiConfermaPassword);
 
+        Intent oldIntent = getIntent();
+        String username = oldIntent.getExtras().getString("username");
+
+        if (username.contains("@"))
+            edtEmail.setText(username);
+        else
+            edtUsername.setText(username);
+
         btnSignUp = findViewById(R.id.btnRegistratiRegistrati);
 
         constraintLayout = findViewById(R.id.constraintRegistrati);

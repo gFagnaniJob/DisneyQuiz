@@ -56,7 +56,7 @@ public class HomePageLoginActivity extends AppCompatActivity implements View.OnC
                 login(edtUsername.getText().toString(), edtPassword.getText().toString());
                 break;
             case R.id.btnHomeRegistrati:
-                goToSignUp();
+                goToSignUp("");
                 break;
             case R.id.constraintHome:
                 rootLayoutTapped();
@@ -70,12 +70,13 @@ public class HomePageLoginActivity extends AppCompatActivity implements View.OnC
         finish();
     }
 
-    private void goToSignUp() {
+    private void goToSignUp(String username) {
         Intent intent = new Intent(HomePageLoginActivity.this, RegistratiActivity.class);
+        intent.putExtra("username", username);
         startActivity(intent);
     }
 
-    private void login(String username, String password) {
+    private void login(final String username, String password) {
         if (username.equals("") || password.equals("")) {
             Utilities.showToast(HomePageLoginActivity.this,
                     "Username e password sono richiesti per entrare",
@@ -94,17 +95,12 @@ public class HomePageLoginActivity extends AppCompatActivity implements View.OnC
                                     FancyToast.SUCCESS);
                             goToHomeGame();
                             finish();
-                        } else {
-                            Utilities.showToast(HomePageLoginActivity.this,
-                                    "Nessun utente trovato. Registrati per giocare!",
-                                    FancyToast.ERROR);
-                            goToSignUp();
                         }
                     } else {
                         Utilities.showToast(HomePageLoginActivity.this,
                                 "Nessun utente trovato. Registrati per giocare!",
                                 FancyToast.ERROR);
-                        goToSignUp();
+                        goToSignUp(username);
                     }
                     progressDialog.dismiss();
                 }
