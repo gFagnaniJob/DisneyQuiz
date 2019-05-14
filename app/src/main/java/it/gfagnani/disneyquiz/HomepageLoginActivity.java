@@ -16,7 +16,7 @@ import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.shashank.sony.fancytoastlib.FancyToast;
 
-public class HomePageLoginActivity extends AppCompatActivity implements View.OnClickListener, View.OnKeyListener {
+public class HomepageLoginActivity extends AppCompatActivity implements View.OnClickListener, View.OnKeyListener {
 
     private EditText edtUsername, edtPassword;
     private Button btnLogin, btnSignUp;
@@ -36,11 +36,11 @@ public class HomePageLoginActivity extends AppCompatActivity implements View.OnC
         btnLogin = findViewById(R.id.btnHomeLogin);
         btnSignUp = findViewById(R.id.btnHomeRegistrati);
 
-        btnLogin.setOnClickListener(HomePageLoginActivity.this);
-        btnSignUp.setOnClickListener(HomePageLoginActivity.this);
-        constraintLayout.setOnClickListener(HomePageLoginActivity.this);
+        btnLogin.setOnClickListener(HomepageLoginActivity.this);
+        btnSignUp.setOnClickListener(HomepageLoginActivity.this);
+        constraintLayout.setOnClickListener(HomepageLoginActivity.this);
 
-        edtPassword.setOnKeyListener(HomePageLoginActivity.this);
+        edtPassword.setOnKeyListener(HomepageLoginActivity.this);
 
         parseUser = new ParseUser();
 
@@ -65,20 +65,20 @@ public class HomePageLoginActivity extends AppCompatActivity implements View.OnC
     }
 
     private void goToHomeGame() {
-        Intent intent = new Intent(HomePageLoginActivity.this, HomepageGameActivity.class);
+        Intent intent = new Intent(HomepageLoginActivity.this, HomepageGameActivity.class);
         startActivity(intent);
         finish();
     }
 
     private void goToSignUp(String username) {
-        Intent intent = new Intent(HomePageLoginActivity.this, RegistratiActivity.class);
+        Intent intent = new Intent(HomepageLoginActivity.this, RegistratiActivity.class);
         intent.putExtra("username", username);
         startActivity(intent);
     }
 
     private void login(final String username, String password) {
         if (username.equals("") || password.equals("")) {
-            Utilities.showToast(HomePageLoginActivity.this,
+            Utilities.showToast(HomepageLoginActivity.this,
                     "Username e password sono richiesti per entrare",
                     FancyToast.INFO);
         } else {
@@ -90,14 +90,14 @@ public class HomePageLoginActivity extends AppCompatActivity implements View.OnC
                 public void done(ParseUser user, ParseException e) {
                     if (e == null) {
                         if (user != null) {
-                            Utilities.showToast(HomePageLoginActivity.this,
+                            Utilities.showToast(HomepageLoginActivity.this,
                                     "Autenticazione riuscita!",
                                     FancyToast.SUCCESS);
                             goToHomeGame();
                             finish();
                         }
                     } else {
-                        Utilities.showToast(HomePageLoginActivity.this,
+                        Utilities.showToast(HomepageLoginActivity.this,
                                 "Nessun utente trovato. Registrati per giocare!",
                                 FancyToast.ERROR);
                         goToSignUp(username);

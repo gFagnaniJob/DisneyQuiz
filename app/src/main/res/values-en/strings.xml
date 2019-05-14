@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Disney Quiz</string>
     <string name="back4app_server_url">https://parseapi.back4app.com/</string>
@@ -7,19 +8,19 @@
     <string name="back4app_client_key">WxxSAlNuoJQPdxiRXLXOuflpQk7JgvxL2yPBypCY</string>
 
     <!-- HomepageLoginActivity strings -->
-    <string name="username_login">Username o Email...</string>
+    <string name="username_login">Username or Email...</string>
     <string name="password_login">Password...</string>
-    <string name="login">Entra</string>
-    <string name="hint_login">Non sei ancora registrato?</string>
-    <string name="signup">Registrati</string>
+    <string name="login">Log In</string>
+    <string name="hint_login">Have not signed up yet?</string>
+    <string name="signup">Sign Up</string>
     <string name="content_description_login">logo</string>
 
     <!-- RegistratiActivity strings -->
-    <string name="username_signup">Inserisci un username...</string>
-    <string name="email_signup">Inserisci la tua email...</string>
-    <string name="password_signup">Inserisci una password...</string>
-    <string name="confirm_password_signup">Conferma password...</string>
+    <string name="username_signup">Insert a username...</string>
+    <string name="email_signup">Insert your email...</string>
+    <string name="password_signup">Insert a password...</string>
+    <string name="confirm_password_signup">Confirm password...</string>
 
     <!-- HomepageGameActivity strings -->
-    <string name="logout_game">Esci</string>
+    <string name="logout_game">Log Out</string>
 </resources>

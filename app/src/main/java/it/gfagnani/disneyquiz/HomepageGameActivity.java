@@ -61,7 +61,7 @@ public class HomepageGameActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void goToHomeLogin() {
-        Intent intent = new Intent(HomepageGameActivity.this, HomePageLoginActivity.class);
+        Intent intent = new Intent(HomepageGameActivity.this, HomepageLoginActivity.class);
         startActivity(intent);
         finish();
     }
